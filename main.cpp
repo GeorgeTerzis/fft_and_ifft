@@ -28,11 +28,9 @@ auto fft1_impl(const cvec &A) {
 
   const arma::uvec even_indices =
     arma::regspace<arma::uvec>(0, 2, N - 1);
-    even_indices.print("even");
 
   const arma::uvec odd_indices = 
     arma::regspace<arma::uvec>(1, 2, N - 1);
-    odd_indices.print("odd");
 
   auto even = fft1_impl<inverse>(cvec(A(even_indices)));
   auto odd = fft1_impl<inverse>(cvec(A(odd_indices)));
